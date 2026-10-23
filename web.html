@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced AI Prompt Maker</title>
+
+    <!-- PALITAN ANG ca-pub-XXXXXXXXXXXXXXXX NG TOTOO MONG ADSENSE PUBLISHER ID -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    
+    <!-- Custom Favicon (AI Sparkles Icon) -->
+    <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;%E2%9C%A8&lt;/text&gt;&lt;/svg&gt;">
+
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --ad-bg: #111827;
+            --ad-border: #374151;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .ad-space {
+            background-color: var(--ad-bg);
+            border: 2px dashed var(--ad-border);
+            color: var(--text-muted);
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 12px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 26px;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .col {
+            flex: 1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px 12px;
+            background-color: #0f172a;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .output-section {
+            margin-top: 25px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        textarea#outputPrompt {
+            background-color: #0f172a;
+            resize: vertical;
+            height: 130px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+        .copy-btn {
+            margin-top: 10px;
+            background-color: #10b981;
+        }
+        .copy-btn:hover {
+            background-color: #059669;
+        }
+
+        footer {
+            margin-top: 25px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 100%;
+            border: 1px solid var(--border-color);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-content h2 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        .modal-content p, .modal-content ul {
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--text-muted);
+        }
+
+        .close-btn {
+            background-color: #ef4444;
+            margin-top: 15px;
+            padding: 8px;
+            font-size: 14px;
+        }
+        .close-btn:hover {
+            background-color: #dc2626;
+        }
+    </style>
+    </head>
+    <body>
+
+    <div class="container">
+        <h1>✨ AI Prompt Maker</h1>
+        
+        <div class="ad-space">
+            <span>Advertisement Space (Header Banner)</span>
+        </div>
+
+        <div class="form-group">
+            <label for="promptType">Prompt Category</label>
+            <select id="promptType">
+                <option value="research">Academic Research &amp; Literature Review</option>
+                <option value="factcheck">Fact-Checking &amp; Source Analysis</option>
+                <option value="coding">Programming / Code Debugging</option>
+                <option value="writing">Academic / Essay Writing</option>
+                <option value="explanation">Simple Explanation (ELI5)</option>
+                <option value="image">AI Image Generation</option>
+                <option value="social">Social Media Caption</option>
+                <option value="email">Business Email Generator</option>
+                <option value="seo">SEO Blog Outline</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="topic">Main Topic, Subject, or Keyword</label>
+            <input type="text" id="topic" placeholder="e.g., Impact of renewable energy on local economies">
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="tone">Tone / Style</label>
+                    <select id="tone">
+                        <option value="professional">Professional &amp; Formal</option>
+                        <option value="simple">Simple &amp; Direct</option>
+                        <option value="detailed">Detailed &amp; Comprehensive</option>
+                        <option value="creative">Creative &amp; Engaging</option>
+                        <option value="casual">Casual &amp; Friendly</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="audience">Target Audience</label>
+                    <select id="audience">
+                        <option value="general public">General Public</option>
+                        <option value="beginners">Beginners / Students</option>
+                        <option value="experts">Professionals / Experts</option>
+                        <option value="kids">Children / Young Kids</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="length">Output Length / Scope</label>
+            <select id="length">
+                <option value="medium length and straight to the point">Medium (Balanced)</option>
+                <option value="short, concise, and summary-based">Short &amp; Concise</option>
+                <option value="deep, comprehensive, and in-depth">Long-form &amp; Detailed</option>
+            </select>
+        </div>
+
+        <button onclick="generatePrompt()">Generate Optimized Prompt</button>
+
+        <div class="output-section">
+            <label for="outputPrompt">Generated AI Prompt:</label>
+            <textarea id="outputPrompt" readonly placeholder="Your optimized prompt will appear here..."></textarea>
+            <button class="copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
+        </div>
+
+        <div class="ad-space" style="margin-top: 25px; margin-bottom: 0;">
+            <span>Advertisement Space (Footer Banner)</span>
+        </div>
+
+        <footer>
+            <p>© 2026 AI Prompt Maker. All rights reserved.</p>
+            <div>
+                <a onclick="openModal('aboutModal')">About Us</a> | 
+                <a onclick="openModal('privacyModal')">Privacy Policy</a> | 
+                <a onclick="openModal('contactModal')">Contact Us</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- MODAL POPUPS -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <h2>About Us</h2>
+            <p>Welcome to <strong>AI Prompt Maker</strong>, a powerful web-based utility designed to help students, developers, researchers, and creators build highly structured, clear, and optimized prompts for various artificial intelligence models.</p>
+            <p>Our goal is to bridge the gap between human ideas and AI comprehension by providing instant, customizable, and professional-grade prompt templates.</p>
+            <button class="close-btn" onclick="closeModal('aboutModal')">Close</button>
+        </div>
+    </div>
+
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <h2>Privacy Policy</h2>
+            <p>Your privacy is important to us. AI Prompt Maker operates entirely on the client-side browser logic, meaning we do not store, track, or harvest any personal data or inputs you type into our generators.</p>
+            <p><strong>Third-Party Ads:</strong> We may display advertisements through networks like Google AdSense in the future. These vendors may use cookies to serve ads based on your prior visits to this or other websites.</p>
+            <button class="close-btn" onclick="closeModal('privacyModal')">Close</button>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feedback, suggestions, or partnership inquiries regarding this website, feel free to reach out to us.</p>
+            <p><strong>Email Support:</strong> support@aipromptmaker.com</p>
+            <button class="close-btn" onclick="closeModal('contactModal')">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function generatePrompt() {
+            const type = document.getElementById('promptType').value;
+            const topic = document.getElementById('topic').value.trim();
+            const tone = document.getElementById('tone').value;
+            const audience = document.getElementById('audience').value;
+            const length = document.getElementById('length').value;
+
+            if (!topic) {
+                alert("Please enter a main topic or subject.");
+                return;
+            }
+
+            let generatedText = "";
+
+            if (type === "research") {
+                generatedText = `Act as an expert academic researcher and scientist. Conduct a thorough literature review and structured breakdown regarding: "${topic}". Tailor the findings for ${audience}, maintain a ${tone} tone, cite credible theoretical frameworks or research perspectives, and keep the scope ${length}. Provide structured sections including background, key arguments, and potential research gaps.`;
+            } else if (type === "factcheck") {
+                generatedText = `Act as a professional fact-checker and critical analyst. Analyze the claims, data points, and arguments surrounding: "${topic}". Evaluate its credibility, identify potential biases, outline supporting and opposing evidence, and present the analysis in a ${tone} manner tailored for ${audience} with a ${length} scope.`;
+            } else if (type === "coding") {
+                generatedText = `Act as an expert software developer. Please help me with the following topic/problem: "${topic}". Target audience for the explanation is tailored for ${audience}. Ensure the tone is ${tone} and keep the overall response ${length}. Provide clean code snippets and step-by-step instructions.`;
+            } else if (type === "writing") {
+                generatedText = `Act as a professional researcher and writer. Write a comprehensive piece about "${topic}". The target audience is ${audience}. Ensure the writing style is ${tone}, well-structured with clear headings, grammatically correct, and ${length}.`;
+            } else if (type === "explanation") {
+                generatedText = `Act as an expert educator. Explain the concept of "${topic}" specifically tailored for ${audience}. Use clear analogies, maintain a ${tone} tone, and make sure the explanation is ${length}.`;
+            } else if (type === "image") {
+                generatedText = `A highly detailed digital illustration of "${topic}", rendered in a ${tone} style, perfect visual appeal for ${audience}, dramatic lighting, 8k resolution, photorealistic masterpiece, trending on artstation.`;
+            } else if (type === "social") {
+                generatedText = `Write an engaging social media post about "${topic}" targeted toward ${audience}. The tone should be ${tone}. Include catchy hooks, relevant hashtags, and keep the format ${length}.`;
+            } else if (type === "email") {
+                generatedText = `Act as a professional communications expert. Draft a formal business email regarding "${topic}". The recipient/audience is ${audience}. The tone must be ${tone} and the length should be ${length}.`;
+            } else if (type === "seo") {
+                generatedText = `Act as an SEO expert and content strategist. Create a detailed blog post outline based on the main keyword/topic: "${topic}". Tailor the structure for ${audience} with a ${tone} tone, including catchy H2/H3 headings and a ${length} scope.`;
+            }
+
+            document.getElementById('outputPrompt').value = generatedText;
+        }
+
+        function copyToClipboard() {
+            const outputBox = document.getElementById('outputPrompt');
+            if (!outputBox.value) {
+                alert("There is no prompt to copy yet.");
+                return;
+            }
+            outputBox.select();
+            document.execCommand('copy');
+            alert("Prompt copied to clipboard successfully!");
+        }
+
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
