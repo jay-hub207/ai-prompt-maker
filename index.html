@@ -229,6 +229,7 @@
                 <option value="social">Social Media Caption</option>
                 <option value="email">Business Email Generator</option>
                 <option value="seo">SEO Blog Outline</option>
+                 <option value="resume">Professional Resume &amp; CV Builder</option>
             </select>
         </div>
 
@@ -352,6 +353,9 @@
                 generatedText = `Act as a professional communications expert. Draft a formal business email regarding "${topic}". The recipient/audience is ${audience}. The tone must be ${tone} and the length should be ${length}.`;
             } else if (type === "seo") {
                 generatedText = `Act as an SEO expert and content strategist. Create a detailed blog post outline based on the main keyword/topic: "${topic}". Tailor the structure for ${audience} with a ${tone} tone, including catchy H2/H3 headings and a ${length} scope.`;
+            }
+             else if (type === "resume") {
+                generatedText = `Act as an expert HR professional and resume writer. Help me craft a compelling, ATS-optimized professional resume based on the following background/skills/job target: "${topic}". Tailor the format for a ${audience} audience, maintain a ${tone} tone, and ensure the content scope is ${length}. Include structured sections such as Professional Summary, Key Competencies, Work Experience with bulleted achievements, and Education.`;
             }
 
             document.getElementById('outputPrompt').value = generatedText;
