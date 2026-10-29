@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced AI Prompt Maker</title>
+    <title>Advanced AI Prompt Maker | Optimize Prompts for ChatGPT & Gemini</title>
     
+    <!-- Meta Description para sa SEO at AdSense Crawlers -->
+    <meta name="description" content="Free online tool to generate optimized, structured, and effective prompts for AI models like ChatGPT, Claude, and Gemini.">
+    
+    <!-- Google AdSense Code (Palitan ang ca-pub-XXXXXXXXXXXXXXXX ng iyong Publisher ID) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+         crossorigin="anonymous"></script>
+
     <!-- Custom Favicon (AI Sparkles Icon) -->
-    <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;%E2%9C%A8&lt;/text&gt;&lt;/svg&gt;">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
 
     <style>
         :root {
@@ -35,23 +42,27 @@
 
         .container {
             width: 100%;
-            max-width: 650px;
+            max-width: 700px;
             background-color: var(--card-bg);
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            box-sizing: border-box;
         }
 
         .ad-space {
             background-color: var(--ad-bg);
-            border: 2px dashed var(--ad-border);
+            border: 1px dashed var(--ad-border);
             color: var(--text-muted);
             text-align: center;
-            padding: 15px;
+            padding: 10px;
             border-radius: 8px;
             font-size: 12px;
             margin-bottom: 20px;
-            letter-spacing: 0.5px;
+            min-height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         h1 {
@@ -134,8 +145,32 @@
             margin-top: 10px;
             background-color: #10b981;
         }
+
         .copy-btn:hover {
             background-color: #059669;
+        }
+
+        /* SEO & Value Content Section */
+        .info-section {
+            margin-top: 35px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .info-section h2 {
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .info-section p, .info-section li {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .info-section ul {
+            padding-left: 20px;
         }
 
         footer {
@@ -150,70 +185,37 @@
         footer a {
             color: var(--primary);
             text-decoration: none;
-            margin: 0 10px;
-            cursor: pointer;
+            margin: 0 8px;
         }
 
         footer a:hover {
             text-decoration: underline;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 100;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .modal-content {
-            background-color: var(--card-bg);
-            padding: 25px;
-            border-radius: 10px;
-            max-width: 500px;
-            width: 100%;
-            border: 1px solid var(--border-color);
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        .modal-content h2 {
-            color: var(--primary);
-            margin-top: 0;
-            font-size: 20px;
-        }
-
-        .modal-content p, .modal-content ul {
-            font-size: 13px;
-            line-height: 1.5;
-            color: var(--text-muted);
-        }
-
-        .close-btn {
-            background-color: #ef4444;
-            margin-top: 15px;
-            padding: 8px;
-            font-size: 14px;
-        }
-        .close-btn:hover {
-            background-color: #dc2626;
+        @media (max-width: 600px) {
+            .row {
+                flex-direction: column;
+                gap: 0;
+            }
         }
     </style>
-    </head>
-    <body>
+</head>
+<body>
 
     <div class="container">
         <h1>✨ AI Prompt Maker</h1>
         
+        <!-- Header Banner Ad Space -->
         <div class="ad-space">
-            <span>Advertisement Space (Header Banner)</span>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
 
         <div class="form-group">
@@ -279,46 +281,42 @@
             <button class="copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
         </div>
 
+        <!-- Footer Banner Ad Space -->
         <div class="ad-space" style="margin-top: 25px; margin-bottom: 0;">
-            <span>Advertisement Space (Footer Banner)</span>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="0987654321"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- Additional Informational Content (Valuable Content for AdSense Approval) -->
+        <div class="info-section">
+            <h2>How to Use the AI Prompt Maker</h2>
+            <p>Creating effective prompts is essential for getting high-quality responses from Large Language Models (LLMs) such as ChatGPT, Claude, and Gemini. Follow these simple steps:</p>
+            <ul>
+                <li><strong>Select a Category:</strong> Choose the primary domain or use-case for your prompt.</li>
+                <li><strong>Enter Your Core Subject:</strong> Input specific topics, keywords, or research problems.</li>
+                <li><strong>Customize Output Style:</strong> Select the target audience, preferred tone, and overall response length.</li>
+                <li><strong>Copy and Execute:</strong> Click 'Generate', copy your prompt, and paste it directly into your favorite AI tool.</li>
+            </ul>
+
+            <h2>Why Well-Structured Prompts Matter</h2>
+            <p>AI models rely heavily on context, instructions, and constraints to deliver accurate results. Providing a defined persona, tone, and targeted constraints minimizes AI hallucinations and ensures higher accuracy for technical writing, coding, and academic research.</p>
         </div>
 
         <footer>
             <p>© 2026 AI Prompt Maker. All rights reserved.</p>
             <div>
-                <a onclick="openModal('aboutModal')">About Us</a> | 
-                <a onclick="openModal('privacyModal')">Privacy Policy</a> | 
-                <a onclick="openModal('contactModal')">Contact Us</a>
+                <a href="about.html">About Us</a> | 
+                <a href="privacy.html">Privacy Policy</a> | 
+                <a href="contact.html">Contact Us</a>
             </div>
         </footer>
-    </div>
-
-    <!-- MODAL POPUPS -->
-    <div id="aboutModal" class="modal">
-        <div class="modal-content">
-            <h2>About Us</h2>
-            <p>Welcome to <strong>AI Prompt Maker</strong>, a powerful web-based utility designed to help students, developers, researchers, and creators build highly structured, clear, and optimized prompts for various artificial intelligence models.</p>
-            <p>Our goal is to bridge the gap between human ideas and AI comprehension by providing instant, customizable, and professional-grade prompt templates.</p>
-            <button class="close-btn" onclick="closeModal('aboutModal')">Close</button>
-        </div>
-    </div>
-
-    <div id="privacyModal" class="modal">
-        <div class="modal-content">
-            <h2>Privacy Policy</h2>
-            <p>Your privacy is important to us. AI Prompt Maker operates entirely on the client-side browser logic, meaning we do not store, track, or harvest any personal data or inputs you type into our generators.</p>
-            <p><strong>Third-Party Ads:</strong> We may display advertisements through networks like Google AdSense in the future. These vendors may use cookies to serve ads based on your prior visits to this or other websites.</p>
-            <button class="close-btn" onclick="closeModal('privacyModal')">Close</button>
-        </div>
-    </div>
-
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <h2>Contact Us</h2>
-            <p>If you have any questions, feedback, suggestions, or partnership inquiries regarding this website, feel free to reach out to us.</p>
-            <p><strong>Email Support:</strong> support@aipromptmaker.com</p>
-            <button class="close-btn" onclick="closeModal('contactModal')">Close</button>
-        </div>
     </div>
 
     <script>
@@ -368,20 +366,6 @@
             outputBox.select();
             document.execCommand('copy');
             alert("Prompt copied to clipboard successfully!");
-        }
-
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-            }
         }
     </script>
 </body>
