@@ -3,72 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced AI Prompt Maker | Optimize Prompts for ChatGPT & Gemini</title>
+    <title>AI Prompt Maker | Student-Friendly Prompt Engineering Tool & Guide</title>
     
-    <meta name="google-site-verification" content="7DXmfsDi2PgrO1esF_uWIF5NmASWG5ycscjJo4WMR64" />
+    <!-- SEO Meta Description -->
+    <meta name="description" content="A student-friendly AI Prompt Maker to generate structured, high-accuracy prompts for ChatGPT, Gemini, and Claude. Includes sample prompt library and study guides.">
     
-    <!-- Google AdSense Code (Palitan ang ca-pub-XXXXXXXXXXXXXXXX ng iyong Publisher ID) -->
+    <!-- Google AdSense Auto Ads Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2882010456142362"
-     crossorigin="anonymous"></script>
-    
-    <!-- Custom Favicon (AI Sparkles Icon) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+         crossorigin="anonymous"></script>
+
+    <!-- Chalkboard & Friendly Student Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+    <!-- Custom Favicon (Chalkboard / Sparkles) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖍️</text></svg>">
 
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --primary: #3b82f6;
-            --primary-hover: #2563eb;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-            --ad-bg: #111827;
-            --ad-border: #374151;
+            --board-bg: #1e352f;
+            --board-dark: #152622;
+            --wood-frame: #6b4423;
+            --wood-border: #4a2e16;
+            --chalk-white: #f4f1ea;
+            --chalk-muted: #cbd5c0;
+            --chalk-yellow: #fde047;
+            --chalk-pink: #f9a8d4;
+            --chalk-blue: #7dd3fc;
+            --chalk-green: #86efac;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            font-family: 'Fredoka', sans-serif;
+            background-color: #162622;
+            /* Subtle chalkboard dust & grid texture */
+            background-image: 
+                radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0),
+                radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+            color: var(--chalk-white);
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             min-height: 100vh;
         }
 
-        .container {
+        /* Wooden Classroom Top Bar */
+        header {
             width: 100%;
-            max-width: 700px;
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            background-color: var(--wood-frame);
+            border-bottom: 5px solid var(--wood-border);
+            padding: 14px 20px;
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+        }
+
+        .nav-container {
+            max-width: 820px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .brand {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+            color: var(--chalk-yellow);
+            text-decoration: none;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.4);
+        }
+
+        nav a {
+            font-family: 'Patrick Hand', cursive;
+            color: var(--chalk-white);
+            text-decoration: none;
+            font-size: 19px;
+            margin-left: 18px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--chalk-yellow);
+            background-color: rgba(0, 0, 0, 0.2);
+            text-decoration: underline wavy var(--chalk-pink);
+        }
+
+        /* Main Content Wrapper */
+        .main-wrapper {
+            width: 100%;
+            max-width: 820px;
+            padding: 30px 20px;
             box-sizing: border-box;
         }
 
-        .ad-space {
-            background-color: var(--ad-bg);
-            border: 1px dashed var(--ad-border);
-            color: var(--text-muted);
-            text-align: center;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 12px;
-            margin-bottom: 20px;
-            min-height: 90px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* Chalkboard Framed Card */
+        .chalkboard-card {
+            background-color: var(--board-bg);
+            border: 8px solid var(--wood-frame);
+            outline: 3px solid var(--wood-border);
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), inset 0 0 35px rgba(0, 0, 0, 0.35);
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        /* Decorative Chalk Ledge & Eraser Accent */
+        .chalkboard-card::after {
+            content: "🧽  🖍️ ✏️";
+            position: absolute;
+            bottom: -6px;
+            right: 22px;
+            font-size: 15px;
+            letter-spacing: 3px;
+            background: var(--wood-border);
+            padding: 2px 10px;
+            border-radius: 6px 6px 0 0;
         }
 
         h1 {
+            font-family: 'Patrick Hand', cursive;
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 26px;
-            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 6px;
+            font-size: 36px;
+            color: var(--chalk-yellow);
+            letter-spacing: 1px;
+            text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.35);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--chalk-muted);
+            font-size: 15px;
+            margin-bottom: 25px;
         }
 
         .form-group {
@@ -77,7 +158,7 @@
 
         .row {
             display: flex;
-            gap: 15px;
+            gap: 16px;
         }
 
         .col {
@@ -85,110 +166,184 @@
         }
 
         label {
+            font-family: 'Patrick Hand', cursive;
             display: block;
             margin-bottom: 6px;
-            font-weight: 600;
-            font-size: 13px;
-            color: var(--text-muted);
+            font-size: 19px;
+            letter-spacing: 0.4px;
+            color: var(--chalk-blue);
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 10px 12px;
-            background-color: #0f172a;
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            border-radius: 6px;
+            padding: 11px 14px;
+            background-color: var(--board-dark);
+            border: 2px dashed rgba(244, 241, 234, 0.45);
+            color: var(--chalk-white);
+            border-radius: 8px;
+            font-family: 'Fredoka', sans-serif;
             font-size: 14px;
             box-sizing: border-box;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(203, 213, 192, 0.55);
         }
 
         input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: var(--primary);
+            border: 2px solid var(--chalk-yellow);
+            box-shadow: 0 0 8px rgba(253, 224, 71, 0.25);
         }
 
         button {
+            font-family: 'Patrick Hand', cursive;
             width: 100%;
             padding: 12px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
+            background-color: var(--chalk-yellow);
+            color: #1a2e29;
+            border: 2px solid #eab308;
+            border-radius: 10px;
+            font-size: 22px;
             font-weight: bold;
+            letter-spacing: 0.5px;
             cursor: pointer;
-            transition: background 0.2s;
-            margin-top: 5px;
+            transition: transform 0.15s, background-color 0.2s;
+            margin-top: 6px;
+            box-shadow: 0 4px 0 #a16207;
         }
 
         button:hover {
-            background-color: var(--primary-hover);
+            background-color: #fef08a;
+            transform: translateY(-1px);
+        }
+
+        button:active {
+            transform: translateY(2px);
+            box-shadow: 0 1px 0 #a16207;
         }
 
         .output-section {
-            margin-top: 25px;
-            border-top: 1px solid var(--border-color);
+            margin-top: 26px;
+            border-top: 2px dashed rgba(244, 241, 234, 0.3);
             padding-top: 20px;
         }
 
         textarea#outputPrompt {
-            background-color: #0f172a;
+            background-color: var(--board-dark);
             resize: vertical;
-            height: 130px;
-            font-family: monospace;
-            font-size: 13px;
+            height: 135px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            border: 2px dashed var(--chalk-green);
         }
 
         .copy-btn {
-            margin-top: 10px;
-            background-color: #10b981;
+            margin-top: 12px;
+            background-color: var(--chalk-green);
+            border-color: #22c55e;
+            box-shadow: 0 4px 0 #15803d;
         }
 
         .copy-btn:hover {
-            background-color: #059669;
+            background-color: #bbf7d0;
         }
 
-        /* SEO & Value Content Section */
-        .info-section {
-            margin-top: 35px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 20px;
+        .copy-btn:active {
+            box-shadow: 0 1px 0 #15803d;
         }
 
-        .info-section h2 {
-            font-size: 18px;
-            color: var(--primary);
-            margin-bottom: 10px;
+        /* Editorial & Study Notes Sections */
+        .article-card {
+            background-color: var(--board-bg);
+            border: 3px dashed rgba(244, 241, 234, 0.4);
+            padding: 28px;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+            margin-bottom: 28px;
         }
 
-        .info-section p, .info-section li {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.6;
+        .article-card h2 {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 28px;
+            color: var(--chalk-pink);
+            margin-top: 0;
+            margin-bottom: 14px;
+            border-bottom: 2px dashed rgba(249, 168, 212, 0.35);
+            padding-bottom: 8px;
         }
 
-        .info-section ul {
-            padding-left: 20px;
+        .article-card h3 {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 22px;
+            color: var(--chalk-yellow);
+            margin-top: 22px;
+            margin-bottom: 8px;
         }
 
+        .article-card p, .article-card li {
+            font-size: 14.5px;
+            color: var(--chalk-muted);
+            line-height: 1.7;
+        }
+
+        .article-card ul {
+            padding-left: 22px;
+        }
+
+        .article-card strong {
+            color: var(--chalk-white);
+        }
+
+        /* Sample Prompt Note Cards */
+        .prompt-sample {
+            background-color: var(--board-dark);
+            border: 2px dashed rgba(125, 211, 252, 0.45);
+            border-left: 5px solid var(--chalk-blue);
+            padding: 15px 18px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .prompt-sample-title {
+            font-family: 'Patrick Hand', cursive;
+            color: var(--chalk-blue);
+            font-size: 19px;
+            margin-bottom: 6px;
+        }
+
+        .prompt-sample-code {
+            font-size: 13.5px;
+            color: var(--chalk-white);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* Wooden Classroom Footer */
         footer {
-            margin-top: 25px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 15px;
+            width: 100%;
+            background-color: var(--wood-frame);
+            border-top: 5px solid var(--wood-border);
+            padding: 20px;
             text-align: center;
-            font-size: 12px;
-            color: var(--text-muted);
+            font-size: 14px;
+            color: var(--chalk-white);
+            box-sizing: border-box;
+            margin-top: auto;
         }
 
         footer a {
-            color: var(--primary);
+            font-family: 'Patrick Hand', cursive;
+            font-size: 18px;
+            color: var(--chalk-yellow);
             text-decoration: none;
-            margin: 0 8px;
+            margin: 0 10px;
         }
 
         footer a:hover {
-            text-decoration: underline;
+            text-decoration: underline wavy var(--chalk-pink);
         }
 
         @media (max-width: 600px) {
@@ -196,136 +351,168 @@
                 flex-direction: column;
                 gap: 0;
             }
+            .nav-container {
+                justify-content: center;
+            }
+            nav a {
+                margin: 0 6px;
+                font-size: 17px;
+            }
+            .chalkboard-card {
+                padding: 22px 18px;
+                border-width: 6px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>✨ AI Prompt Maker</h1>
-        
-        <!-- Header Banner Ad Space -->
-        <div class="ad-space">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+    <!-- Top Wooden Navigation Bar -->
+    <header>
+        <div class="nav-container">
+            <a href="./index.html" class="brand">🖍️ AI Prompt Maker</a>
+            <nav>
+                <a href="./index.html" class="active">Home</a>
+                <a href="./prompt-engineering-guide.html">Study Guide</a>
+                <a href="./about.html">About</a>
+                <a href="./privacy.html">Privacy</a>
+                <a href="./contact.html">Contact</a>
+            </nav>
         </div>
+    </header>
 
-        <div class="form-group">
-            <label for="promptType">Prompt Category</label>
-            <select id="promptType">
-                <option value="research">Academic Research &amp; Literature Review</option>
-                <option value="factcheck">Fact-Checking &amp; Source Analysis</option>
-                <option value="coding">Programming / Code Debugging</option>
-                <option value="writing">Academic / Essay Writing</option>
-                <option value="explanation">Simple Explanation (ELI5)</option>
-                <option value="image">AI Image Generation</option>
-                <option value="social">Social Media Caption</option>
-                <option value="email">Business Email Generator</option>
-                <option value="seo">SEO Blog Outline</option>
-                 <option value="resume">Professional Resume &amp; CV Builder</option>
-            </select>
-        </div>
+    <div class="main-wrapper">
+        <!-- Main Chalkboard Generator Tool -->
+        <div class="chalkboard-card">
+            <h1>✏️ AI Prompt Chalkboard</h1>
+            <p class="subtitle">Turn rough study topics into clear, structured prompts for ChatGPT, Gemini, and Claude!</p>
 
-        <div class="form-group">
-            <label for="topic">Main Topic, Subject, or Keyword</label>
-            <input type="text" id="topic" placeholder="e.g., Impact of renewable energy on local economies">
-        </div>
+            <div class="form-group">
+                <label for="promptType">1. Pick Your Subject / Category</label>
+                <select id="promptType">
+                    <option value="research">📚 Academic Research &amp; Literature Review</option>
+                    <option value="factcheck">🔍 Fact-Checking &amp; Source Analysis</option>
+                    <option value="coding">💻 Programming / Code Debugging</option>
+                    <option value="writing">📝 Academic / Essay Writing</option>
+                    <option value="resume">📄 Student Resume &amp; CV Builder</option>
+                    <option value="explanation">💡 Simple Explanation (ELI5)</option>
+                    <option value="image">🎨 AI Image Generation</option>
+                    <option value="social">📱 Social Media Caption</option>
+                    <option value="email">✉️ Formal / School Email Generator</option>
+                    <option value="seo">🌐 SEO Blog Outline</option>
+                </select>
+            </div>
 
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label for="tone">Tone / Style</label>
-                    <select id="tone">
-                        <option value="professional">Professional &amp; Formal</option>
-                        <option value="simple">Simple &amp; Direct</option>
-                        <option value="detailed">Detailed &amp; Comprehensive</option>
-                        <option value="creative">Creative &amp; Engaging</option>
-                        <option value="casual">Casual &amp; Friendly</option>
-                    </select>
+            <div class="form-group">
+                <label for="topic">2. Write Your Topic, Lesson, or Keyword</label>
+                <input type="text" id="topic" placeholder="e.g., Impact of renewable energy on local communities">
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="tone">3. Choose Tone / Style</label>
+                        <select id="tone">
+                            <option value="professional">Professional &amp; Formal</option>
+                            <option value="simple">Simple &amp; Direct</option>
+                            <option value="detailed">Detailed &amp; Comprehensive</option>
+                            <option value="creative">Creative &amp; Engaging</option>
+                            <option value="casual">Casual &amp; Friendly</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="audience">4. Target Reader / Audience</label>
+                        <select id="audience">
+                            <option value="general public">General Public</option>
+                            <option value="beginners">Students / Beginners</option>
+                            <option value="experts">Professors / Experts</option>
+                            <option value="kids">Young Kids</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="form-group">
-                    <label for="audience">Target Audience</label>
-                    <select id="audience">
-                        <option value="general public">General Public</option>
-                        <option value="beginners">Beginners / Students</option>
-                        <option value="experts">Professionals / Experts</option>
-                        <option value="kids">Children / Young Kids</option>
-                    </select>
-                </div>
+
+            <div class="form-group">
+                <label for="length">5. Answer Length</label>
+                <select id="length">
+                    <option value="medium length and straight to the point">Medium (Balanced Notes)</option>
+                    <option value="short, concise, and summary-based">Short &amp; Quick Summary</option>
+                    <option value="deep, comprehensive, and in-depth">Long-form &amp; Detailed</option>
+                </select>
+            </div>
+
+            <button onclick="generatePrompt()">✨ Write My AI Prompt!</button>
+
+            <div class="output-section">
+                <label for="outputPrompt">📋 Your Ready-to-Use Chalkboard Prompt:</label>
+                <textarea id="outputPrompt" readonly placeholder="Your structured prompt will appear right here..."></textarea>
+                <button class="copy-btn" onclick="copyToClipboard()">📑 Copy Prompt to Clipboard</button>
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="length">Output Length / Scope</label>
-            <select id="length">
-                <option value="medium length and straight to the point">Medium (Balanced)</option>
-                <option value="short, concise, and summary-based">Short &amp; Concise</option>
-                <option value="deep, comprehensive, and in-depth">Long-form &amp; Detailed</option>
-            </select>
-        </div>
+        <!-- Sample Prompts Library Section -->
+        <article class="article-card">
+            <h2>📌 Student Sample Prompts Library</h2>
+            <p>Need inspiration for your homework, capstone project, or study reviewer? Try these tested prompt templates showing how assigning a clear role and structure gets much better answers from AI:</p>
 
-        <button onclick="generatePrompt()">Generate Optimized Prompt</button>
+            <div class="prompt-sample">
+                <div class="prompt-sample-title">1. Academic Literature Review &amp; Synthesis</div>
+                <p class="prompt-sample-code">"Act as an expert academic researcher and scientist. Conduct a thorough literature review and structured breakdown regarding: 'The integration of IoT sensors in local flood monitoring systems'. Tailor the findings for university students, maintain a professional tone, cite credible theoretical frameworks, and provide structured sections including background, key arguments, and potential research gaps."</p>
+            </div>
 
-        <div class="output-section">
-            <label for="outputPrompt">Generated AI Prompt:</label>
-            <textarea id="outputPrompt" readonly placeholder="Your optimized prompt will appear here..."></textarea>
-            <button class="copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
-        </div>
+            <div class="prompt-sample">
+                <div class="prompt-sample-title">2. Code Debugging &amp; Logic Walkthrough</div>
+                <p class="prompt-sample-code">"Act as a senior software engineer. Analyze the following backend API routing logic for potential race conditions, memory leaks, and security vulnerabilities. Target the explanation for computer science students, maintain a direct and technical tone, and provide refactored code snippets with inline comments explaining each fix."</p>
+            </div>
 
-        <!-- Footer Banner Ad Space -->
-        <div class="ad-space" style="margin-top: 25px; margin-bottom: 0;">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                 data-ad-slot="0987654321"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
+            <div class="prompt-sample">
+                <div class="prompt-sample-title">3. OJT &amp; Entry-Level Student Resume Builder</div>
+                <p class="prompt-sample-code">"Act as an experienced HR recruiter and career coach. Rewrite my school project descriptions into quantifiable, action-oriented bullet points tailored for an internship or entry-level developer position. Highlight problem-solving impact, technical stack proficiency, and measurable outcomes in a concise, formal tone."</p>
+            </div>
 
-        <!-- Additional Informational Content (Valuable Content for AdSense Approval) -->
-        <section class="info-section">
-            <h2>Comprehensive Guide to AI Prompt Engineering</h2>
-            <p>Artificial Intelligence models like ChatGPT, Claude, and Gemini rely heavily on well-structured input queries to produce accurate and context-aware responses. Poorly constructed prompts often lead to vague, generic, or hallucinated outputs. Our AI Prompt Maker simplifies this process by structuring your ideas into optimized prompt frameworks.</p>
+            <div class="prompt-sample">
+                <div class="prompt-sample-title">4. Critical Fact-Checking &amp; Debate Prep</div>
+                <p class="prompt-sample-code">"Act as an objective investigative analyst. Evaluate the core claims surrounding: 'Remote work productivity trends in technology sectors'. Outline supporting empirical data, identify counterarguments or methodological biases, and present a balanced summary suitable for academic debate preparation."</p>
+            </div>
+        </article>
 
-            <h3>How to Use the AI Prompt Maker Effectively</h3>
-            <p>To get the most relevant output from your AI model, follow these step-by-step guidelines when configuring the generator above:</p>
+        <!-- Comprehensive Guide Section -->
+        <article class="article-card">
+            <h2>📖 Quick Study Notes: How Prompt Engineering Works</h2>
+            <p>Modern AI chatbots like ChatGPT, Gemini, and Claude work by predicting the best sequence of words based on the clues you give them. When a prompt is too short—like typing <em>"Explain photosynthesis"</em>—the AI only gives a basic textbook summary.</p>
+
+            <h3>The 4 Chalkboard Rules for Better Prompts</h3>
             <ul>
-                <li><strong>Select the Appropriate Category:</strong> Choose a framework tailored to your target output (e.g., Academic Research, Coding, or Business Email).</li>
-                <li><strong>Define Your Core Subject:</strong> Input specific, unambiguous keywords or main topics rather than single words.</li>
-                <li><strong>Set the Desired Persona & Tone:</strong> Assigning a clear persona (such as an expert developer or academic researcher) drastically improves response quality.</li>
-                <li><strong>Specify Constraints & Audience:</strong> Constraining length and defining target readers ensures the generated output aligns with your expectations.</li>
+                <li><strong>Assign a Specialist Role:</strong> Telling the AI to act like a tutor, researcher, or programmer helps it use the right vocabulary and depth.</li>
+                <li><strong>Define Clear Topic Boundaries:</strong> Specific keywords keep the AI focused on your exact lesson or problem.</li>
+                <li><strong>Match the Reader Level:</strong> Choosing "Students / Beginners" ensures concepts are explained clearly without overwhelming jargon.</li>
+                <li><strong>Control the Output Length:</strong> Asking for a quick summary versus an in-depth breakdown saves time when reviewing for exams.</li>
             </ul>
 
-            <h3>Why Prompt Engineering Matters for AI Models</h3>
-            <p>Large Language Models (LLMs) do not truly "understand" text in a human sense—they predict sequences of words based on contextual probabilities. By explicitly providing context, roles, and structural guidelines, you guide the model toward producing precise and professional results.</p>
-
             <h3>Frequently Asked Questions (FAQ)</h3>
-            <p><strong>Is the AI Prompt Maker free to use?</strong><br>Yes, our prompt generator tool is 100% free and processes all prompts locally within your browser without storing user inputs.</p>
+            <p><strong>Is AI Prompt Maker free for students?</strong><br>
+            Yes! All prompt templates and study guides on this site are 100% free with no login required.</p>
 
-            <p><strong>Which AI models are these prompts designed for?</strong><br>The generated prompts follow universal prompt engineering techniques compatible with OpenAI ChatGPT, Google Gemini, Anthropic Claude, and other LLMs.</p>
-        </section>
-        <footer>
-            <footer>
-    <p>© 2026 AI Prompt Maker. All rights reserved.</p>
-    <div>
-        <a href="./About.html">About Us</a> | 
-        <a href="./Privacy.html">Privacy Policy</a> | 
-        <a href="./Contact.html">Contact Us</a>
+            <p><strong>Does this site save my assignments or topics?</strong><br>
+            No. Everything runs locally inside your web browser using client-side JavaScript—your notes and topics stay private on your device.</p>
+
+            <p><strong>Which AI apps work with these prompts?</strong><br>
+            You can copy and paste these generated prompts directly into Google Gemini, OpenAI ChatGPT, Anthropic Claude, or Microsoft Copilot.</p>
+        </article>
     </div>
-        </footer>
-    </div>
+
+    <footer>
+        <p>© 2026 AI Prompt Maker — Built for Students &amp; Creators.</p>
+        <div>
+            <a href="./index.html">Home</a> | 
+            <a href="./prompt-engineering-guide.html">Study Guide</a> | 
+            <a href="./about.html">About Us</a> | 
+            <a href="./privacy.html">Privacy Policy</a> | 
+            <a href="./contact.html">Contact Us</a>
+        </div>
+    </footer>
 
     <script>
         function generatePrompt() {
@@ -336,7 +523,7 @@
             const length = document.getElementById('length').value;
 
             if (!topic) {
-                alert("Please enter a main topic or subject.");
+                alert("Please write a topic, lesson, or keyword first!");
                 return;
             }
 
@@ -350,6 +537,8 @@
                 generatedText = `Act as an expert software developer. Please help me with the following topic/problem: "${topic}". Target audience for the explanation is tailored for ${audience}. Ensure the tone is ${tone} and keep the overall response ${length}. Provide clean code snippets and step-by-step instructions.`;
             } else if (type === "writing") {
                 generatedText = `Act as a professional researcher and writer. Write a comprehensive piece about "${topic}". The target audience is ${audience}. Ensure the writing style is ${tone}, well-structured with clear headings, grammatically correct, and ${length}.`;
+            } else if (type === "resume") {
+                generatedText = `Act as an expert HR professional and resume writer. Help me craft a compelling, ATS-optimized professional resume based on the following background/skills/job target: "${topic}". Tailor the format for a ${audience} audience, maintain a ${tone} tone, and ensure the content scope is ${length}. Include structured sections such as Professional Summary, Key Competencies, Work Experience with bulleted achievements, and Education.`;
             } else if (type === "explanation") {
                 generatedText = `Act as an expert educator. Explain the concept of "${topic}" specifically tailored for ${audience}. Use clear analogies, maintain a ${tone} tone, and make sure the explanation is ${length}.`;
             } else if (type === "image") {
@@ -357,12 +546,9 @@
             } else if (type === "social") {
                 generatedText = `Write an engaging social media post about "${topic}" targeted toward ${audience}. The tone should be ${tone}. Include catchy hooks, relevant hashtags, and keep the format ${length}.`;
             } else if (type === "email") {
-                generatedText = `Act as a professional communications expert. Draft a formal business email regarding "${topic}". The recipient/audience is ${audience}. The tone must be ${tone} and the length should be ${length}.`;
+                generatedText = `Act as a professional communications expert. Draft a formal business or academic email regarding "${topic}". The recipient/audience is ${audience}. The tone must be ${tone} and the length should be ${length}.`;
             } else if (type === "seo") {
                 generatedText = `Act as an SEO expert and content strategist. Create a detailed blog post outline based on the main keyword/topic: "${topic}". Tailor the structure for ${audience} with a ${tone} tone, including catchy H2/H3 headings and a ${length} scope.`;
-            }
-             else if (type === "resume") {
-                generatedText = `Act as an expert HR professional and resume writer. Help me craft a compelling, ATS-optimized professional resume based on the following background/skills/job target: "${topic}". Tailor the format for a ${audience} audience, maintain a ${tone} tone, and ensure the content scope is ${length}. Include structured sections such as Professional Summary, Key Competencies, Work Experience with bulleted achievements, and Education.`;
             }
 
             document.getElementById('outputPrompt').value = generatedText;
@@ -371,12 +557,12 @@
         function copyToClipboard() {
             const outputBox = document.getElementById('outputPrompt');
             if (!outputBox.value) {
-                alert("There is no prompt to copy yet.");
+                alert("Generate a prompt first before copying!");
                 return;
             }
             outputBox.select();
             document.execCommand('copy');
-            alert("Prompt copied to clipboard successfully!");
+            alert("Copied to clipboard! Paste it into your AI chat.");
         }
     </script>
 </body>
