@@ -4,158 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | AI Prompt Maker</title>
+    <meta name="description" content="Privacy Policy for AI Prompt Maker, including client-side data handling, cookies, and Google AdSense disclosures.">
     
-    <!-- Meta Description -->
-    <meta name="description" content="Privacy Policy for AI Prompt Maker explaining how we handle user data and third-party advertising cookies.">
-    
-    <!-- Custom Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+    <!-- Google AdSense Auto Ads Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2882010456142362"
+         crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖍️</text></svg>">
 
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --primary: #3b82f6;
-            --primary-hover: #2563eb;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
+            --board-bg: #1e352f;
+            --wood-frame: #6b4423;
+            --wood-border: #4a2e16;
+            --chalk-white: #f4f1ea;
+            --chalk-muted: #cbd5c0;
+            --chalk-yellow: #fde047;
+            --chalk-pink: #f9a8d4;
         }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: 'Fredoka', sans-serif;
+            background-color: #162622;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0), radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+            color: var(--chalk-white);
+            margin: 0; padding: 0;
+            display: flex; flex-direction: column; align-items: center; min-height: 100vh;
         }
-
-        .container {
-            width: 100%;
-            max-width: 700px;
-            background-color: var(--card-bg);
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-            box-sizing: border-box;
+        header {
+            width: 100%; background-color: var(--wood-frame); border-bottom: 5px solid var(--wood-border);
+            padding: 14px 20px; box-sizing: border-box; position: sticky; top: 0; z-index: 50;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
         }
-
+        .nav-container {
+            max-width: 820px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+        }
+        .brand {
+            font-family: 'Patrick Hand', cursive; font-size: 26px; color: var(--chalk-yellow); text-decoration: none; text-shadow: 1px 1px 0px rgba(0,0,0,0.4);
+        }
+        nav a {
+            font-family: 'Patrick Hand', cursive; color: var(--chalk-white); text-decoration: none; font-size: 19px; margin-left: 18px; padding: 4px 8px; border-radius: 6px;
+        }
+        nav a:hover, nav a.active {
+            color: var(--chalk-yellow); background-color: rgba(0, 0, 0, 0.2); text-decoration: underline wavy var(--chalk-pink);
+        }
+        .main-wrapper {
+            width: 100%; max-width: 820px; padding: 30px 20px; box-sizing: border-box;
+        }
+        .chalkboard-card {
+            background-color: var(--board-bg); border: 8px solid var(--wood-frame); outline: 3px solid var(--wood-border);
+            padding: 30px; border-radius: 14px; box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), inset 0 0 35px rgba(0, 0, 0, 0.35);
+        }
         h1 {
-            font-size: 26px;
-            color: var(--primary);
-            margin-top: 0;
-            margin-bottom: 10px;
-            text-align: center;
+            font-family: 'Patrick Hand', cursive; font-size: 34px; color: var(--chalk-yellow); margin-top: 0; border-bottom: 2px dashed rgba(253, 224, 71, 0.35); padding-bottom: 10px;
         }
-
-        .last-updated {
-            text-align: center;
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 25px;
-        }
-
         h2 {
-            font-size: 18px;
-            color: var(--primary);
-            margin-top: 25px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 6px;
+            font-family: 'Patrick Hand', cursive; font-size: 24px; color: var(--chalk-pink); margin-top: 24px;
         }
-
         p, li {
-            font-size: 14px;
-            line-height: 1.6;
-            color: var(--text-muted);
+            font-size: 14.5px; color: var(--chalk-muted); line-height: 1.75;
         }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        .back-btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 10px 20px;
-            background-color: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 14px;
-            transition: background 0.2s;
-            text-align: center;
-        }
-
-        .back-btn:hover {
-            background-color: var(--primary-hover);
-        }
-
+        strong { color: var(--chalk-white); }
+        a.inline-link { color: var(--chalk-yellow); }
         footer {
-            margin-top: 30px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 15px;
-            text-align: center;
-            font-size: 12px;
-            color: var(--text-muted);
+            width: 100%; background-color: var(--wood-frame); border-top: 5px solid var(--wood-border);
+            padding: 20px; text-align: center; font-size: 14px; color: var(--chalk-white); box-sizing: border-box; margin-top: auto;
         }
-
         footer a {
-            color: var(--primary);
-            text-decoration: none;
-            margin: 0 8px;
+            font-family: 'Patrick Hand', cursive; font-size: 18px; color: var(--chalk-yellow); text-decoration: none; margin: 0 10px;
         }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
+        footer a:hover { text-decoration: underline wavy var(--chalk-pink); }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>Privacy Policy</h1>
-        <div class="last-updated">Last Updated: October 2026</div>
-
-        <p>At <strong>AI Prompt Maker</strong>, accessible from our main website, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by AI Prompt Maker and how we use it.</p>
-
-        <h2>1. Client-Side Data Processing</h2>
-        <p>AI Prompt Maker operates primarily on client-side browser logic. The text inputs, keywords, topics, and choices you enter into our prompt generator tool are processed directly within your web browser. We do not collect, store, or transmit your prompt inputs to any external databases or server storage.</p>
-
-        <h2>2. Cookies and Web Beacons</h2>
-        <p>Like any other website, AI Prompt Maker uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
-
-        <h2>3. Google DoubleClick DART Cookie & Third-Party Ads</h2>
-        <p>Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL: <a href="https://policies.google.com/technologies/ads" target="_blank" style="color: var(--primary);">https://policies.google.com/technologies/ads</a></p>
-
-        <h2>4. Advertising Partners Privacy Policies</h2>
-        <p>Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on AI Prompt Maker, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</p>
-        <p>Note that AI Prompt Maker has no access to or control over these cookies that are used by third-party advertisers.</p>
-
-        <h2>5. Log Files</h2>
-        <p>AI Prompt Maker follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this as part of hosting services' analytics. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.</p>
-
-        <h2>6. Consent</h2>
-        <p>By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.</p>
-
-        <div style="text-align: center;">
-            <a href="index.html" class="back-btn">← Back to Main Tool</a>
+    <header>
+        <div class="nav-container">
+            <a href="./index.html" class="brand">🖍️ AI Prompt Maker</a>
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./prompt-engineering-guide.html">Study Guide</a>
+                <a href="./about.html">About</a>
+                <a href="./privacy.html" class="active">Privacy</a>
+                <a href="./contact.html">Contact</a>
+            </nav>
         </div>
+    </header>
 
-        <footer>
-            <p>© 2026 AI Prompt Maker. All rights reserved.</p>
-            <div>
-                 <a href="./About.html">About Us</a> | 
-                 <a href="./Privacy.html">Privacy Policy</a> | 
-                 <a href="./Contact.html">Contact Us</a>
-            </div>
-        </footer>
+    <div class="main-wrapper">
+        <article class="chalkboard-card">
+            <h1>🔒 Privacy Policy</h1>
+            <p><strong>Last Updated:</strong> November 2026</p>
+            <p>At <strong>AI Prompt Maker</strong> (accessible at <code>ai-prompt-maker.onrender.com</code>), the privacy of our visitors is a top priority. This Privacy Policy document outlines the types of information collected and recorded by our website and how we use it.</p>
+
+            <h2>1. Client-Side Prompt Processing</h2>
+            <p>All prompt generation features on AI Prompt Maker run locally inside your browser using JavaScript. We do not collect, store, or transmit the topics, keywords, or generated prompts you enter into our tool.</p>
+
+            <h2>2. Log Files and Hosting</h2>
+            <p>Like most standard websites, our hosting provider (Render) may automatically record basic server log files such as IP addresses, browser types, Internet Service Providers (ISP), date/time stamps, and referring pages for security, performance monitoring, and diagnostic purposes.</p>
+
+            <h2>3. Cookies and Google AdSense</h2>
+            <p>We use <strong>Google AdSense</strong> to display advertisements that keep this educational tool free for students. Google, as a third-party vendor, uses cookies (such as the DART cookie) to serve ads to visitors based on their visits to this site and other sites on the Internet.</p>
+            <p>Visitors may opt out of personalized advertising by visiting <a class="inline-link" href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ads Settings</a>.</p>
+
+            <h2>4. Consent</h2>
+            <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
+        </article>
     </div>
 
+    <footer>
+        <p>© 2026 AI Prompt Maker — Built for Students &amp; Creators.</p>
+        <div>
+            <a href="./index.html">Home</a> | 
+            <a href="./prompt-engineering-guide.html">Study Guide</a> | 
+            <a href="./about.html">About Us</a> | 
+            <a href="./privacy.html">Privacy Policy</a> | 
+            <a href="./contact.html">Contact Us</a>
+        </div>
+    </footer>
 </body>
 </html>
