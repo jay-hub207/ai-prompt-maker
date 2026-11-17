@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Prompt Maker | Student-Friendly Prompt Engineering Tool & Guide</title>
     
-    <!-- SEO Meta Description -->
+  
     <meta name="description" content="A student-friendly AI Prompt Maker to generate structured, high-accuracy prompts for ChatGPT, Gemini, and Claude. Includes sample prompt library and study guides.">
     
-    <!-- Google AdSense Auto Ads Script -->
+  
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2882010456142362"
          crossorigin="anonymous"></script>
 
-    <!-- Chalkboard & Friendly Student Fonts -->
+ 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Patrick+Hand&display=swap" rel="stylesheet">
 
-    <!-- Custom Favicon (Chalkboard / Sparkles) -->
+   
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖍️</text></svg>">
 
     <style>
@@ -297,7 +297,7 @@
             color: var(--chalk-white);
         }
 
-        /* Sample Prompt Note Cards */
+     
         .prompt-sample {
             background-color: var(--board-dark);
             border: 2px dashed rgba(125, 211, 252, 0.45);
@@ -321,7 +321,7 @@
             margin: 0;
         }
 
-        /* Wooden Classroom Footer */
+      
         footer {
             width: 100%;
             background-color: var(--wood-frame);
@@ -514,7 +514,69 @@
         </div>
     </footer>
 
-    <script>
+   <script>
+      
+        class PromptTemplate {
+            #templates; 
+            constructor() {
+                
+                this.#templates = {
+                    research: (topic, tone, audience, length) =>
+                        `Act as an expert academic researcher and scientist. Conduct a thorough literature review and structured breakdown regarding: "${topic}". Tailor the findings for ${audience}, maintain a ${tone} tone, cite credible theoretical frameworks or research perspectives, and keep the scope ${length}. Provide structured sections including background, key arguments, and potential research gaps.`,
+                    factcheck: (topic, tone, audience, length) =>
+                        `Act as a professional fact-checker and critical analyst. Analyze the claims, data points, and arguments surrounding: "${topic}". Evaluate its credibility, identify potential biases, outline supporting and opposing evidence, and present the analysis in a ${tone} manner tailored for ${audience} with a ${length} scope.`,
+                    coding: (topic, tone, audience, length) =>
+                        `Act as an expert software developer. Please help me with the following topic/problem: "${topic}". Target audience for the explanation is tailored for ${audience}. Ensure the tone is ${tone} and keep the overall response ${length}. Provide clean code snippets and step-by-step instructions.`,
+                    writing: (topic, tone, audience, length) =>
+                        `Act as a professional researcher and writer. Write a comprehensive piece about "${topic}". The target audience is ${audience}. Ensure the writing style is ${tone}, well-structured with clear headings, grammatically correct, and ${length}.`,
+                    resume: (topic, tone, audience, length) =>
+                        `Act as an expert HR professional and resume writer. Help me craft a compelling, ATS-optimized professional resume based on the following background/skills/job target: "${topic}". Tailor the format for a ${audience} audience, maintain a ${tone} tone, and ensure the content scope is ${length}. Include structured sections such as Professional Summary, Key Competencies, Work Experience with bulleted achievements, and Education.`,
+                    explanation: (topic, tone, audience, length) =>
+                        `Act as an expert educator. Explain the concept of "${topic}" specifically tailored for ${audience}. Use clear analogies, maintain a ${tone} tone, and make sure the explanation is ${length}.`,
+                    image: (topic, tone, audience, length) =>
+                        `A highly detailed digital illustration of "${topic}", rendered in a ${tone} style, perfect visual appeal for ${audience}, dramatic lighting, 8k resolution, photorealistic masterpiece, trending on artstation.`,
+                    social: (topic, tone, audience, length) =>
+                        `Write an engaging social media post about "${topic}" targeted toward ${audience}. The tone should be ${tone}. Include catchy hooks, relevant hashtags, and keep the format ${length}.`,
+                    email: (topic, tone, audience, length) =>
+                        `Act as a professional communications expert. Draft a formal business or academic email regarding "${topic}". The recipient/audience is ${audience}. The tone must be ${tone} and the length should be ${length}.`,
+                    seo: (topic, tone, audience, length) =>
+                        `Act as an SEO expert and content strategist. Create a detailed blog post outline based on the main keyword/topic: "${topic}". Tailor the structure for ${audience} with a ${tone} tone, including catchy H2/H3 headings and a ${length} scope.`
+                };
+            }
+
+            
+            build(type, topic, tone, audience, length) {
+                const generatorFn = this.#templates[type];
+                return generatorFn ? generatorFn(topic, tone, audience, length) : "";
+            }
+        }
+
+        
+        class PromptApp extends PromptTemplate {
+            constructor() {
+                super(); 
+                this.history = []; 
+            }
+
+            
+            createAndSave(type, topic, tone, audience, length) {
+                const promptText = this.build(type, topic, tone, audience, length);
+                
+                
+                this.history.push({
+                    category: type,
+                    subject: topic,
+                    generatedPrompt: promptText,
+                    timestamp: new Date().toLocaleTimeString()
+                });
+                
+                return promptText;
+            }
+        }
+
+       
+        const app = new PromptApp();
+
         function generatePrompt() {
             const type = document.getElementById('promptType').value;
             const topic = document.getElementById('topic').value.trim();
@@ -527,31 +589,8 @@
                 return;
             }
 
-            let generatedText = "";
-
-            if (type === "research") {
-                generatedText = `Act as an expert academic researcher and scientist. Conduct a thorough literature review and structured breakdown regarding: "${topic}". Tailor the findings for ${audience}, maintain a ${tone} tone, cite credible theoretical frameworks or research perspectives, and keep the scope ${length}. Provide structured sections including background, key arguments, and potential research gaps.`;
-            } else if (type === "factcheck") {
-                generatedText = `Act as a professional fact-checker and critical analyst. Analyze the claims, data points, and arguments surrounding: "${topic}". Evaluate its credibility, identify potential biases, outline supporting and opposing evidence, and present the analysis in a ${tone} manner tailored for ${audience} with a ${length} scope.`;
-            } else if (type === "coding") {
-                generatedText = `Act as an expert software developer. Please help me with the following topic/problem: "${topic}". Target audience for the explanation is tailored for ${audience}. Ensure the tone is ${tone} and keep the overall response ${length}. Provide clean code snippets and step-by-step instructions.`;
-            } else if (type === "writing") {
-                generatedText = `Act as a professional researcher and writer. Write a comprehensive piece about "${topic}". The target audience is ${audience}. Ensure the writing style is ${tone}, well-structured with clear headings, grammatically correct, and ${length}.`;
-            } else if (type === "resume") {
-                generatedText = `Act as an expert HR professional and resume writer. Help me craft a compelling, ATS-optimized professional resume based on the following background/skills/job target: "${topic}". Tailor the format for a ${audience} audience, maintain a ${tone} tone, and ensure the content scope is ${length}. Include structured sections such as Professional Summary, Key Competencies, Work Experience with bulleted achievements, and Education.`;
-            } else if (type === "explanation") {
-                generatedText = `Act as an expert educator. Explain the concept of "${topic}" specifically tailored for ${audience}. Use clear analogies, maintain a ${tone} tone, and make sure the explanation is ${length}.`;
-            } else if (type === "image") {
-                generatedText = `A highly detailed digital illustration of "${topic}", rendered in a ${tone} style, perfect visual appeal for ${audience}, dramatic lighting, 8k resolution, photorealistic masterpiece, trending on artstation.`;
-            } else if (type === "social") {
-                generatedText = `Write an engaging social media post about "${topic}" targeted toward ${audience}. The tone should be ${tone}. Include catchy hooks, relevant hashtags, and keep the format ${length}.`;
-            } else if (type === "email") {
-                generatedText = `Act as a professional communications expert. Draft a formal business or academic email regarding "${topic}". The recipient/audience is ${audience}. The tone must be ${tone} and the length should be ${length}.`;
-            } else if (type === "seo") {
-                generatedText = `Act as an SEO expert and content strategist. Create a detailed blog post outline based on the main keyword/topic: "${topic}". Tailor the structure for ${audience} with a ${tone} tone, including catchy H2/H3 headings and a ${length} scope.`;
-            }
-
-            document.getElementById('outputPrompt').value = generatedText;
+          
+            document.getElementById('outputPrompt').value = app.createAndSave(type, topic, tone, audience, length);
         }
 
         function copyToClipboard() {
