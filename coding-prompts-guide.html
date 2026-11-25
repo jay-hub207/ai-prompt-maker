@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompts for Student Coding & Debugging | AI Prompt Maker</title>
+    
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Complete student guide on using AI prompts to debug Python, Java, HTML, CSS, and JavaScript code without hurting your programming fundamentals.">
+    
+    <!-- Google AdSense Auto Ads Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2882010456142362"
+         crossorigin="anonymous"></script>
+
+    <!-- Chalkboard & Friendly Student Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+    <!-- Custom Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖍️</text></svg>">
+
+    <style>
+        :root {
+            --board-bg: #1e352f;
+            --board-dark: #152622;
+            --wood-frame: #6b4423;
+            --wood-border: #4a2e16;
+            --chalk-white: #f4f1ea;
+            --chalk-muted: #cbd5c0;
+            --chalk-yellow: #fde047;
+            --chalk-pink: #f9a8d4;
+            --chalk-blue: #7dd3fc;
+            --chalk-green: #86efac;
+            --chalk-red: #fca5a5;
+        }
+
+        body {
+            font-family: 'Fredoka', sans-serif;
+            background-color: #162622;
+            background-image: 
+                radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0),
+                radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+            color: var(--chalk-white);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            background-color: var(--wood-frame);
+            border-bottom: 5px solid var(--wood-border);
+            padding: 14px 20px;
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+        }
+
+        .nav-container {
+            max-width: 820px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .brand {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 26px;
+            color: var(--chalk-yellow);
+            text-decoration: none;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.4);
+        }
+
+        nav a {
+            font-family: 'Patrick Hand', cursive;
+            color: var(--chalk-white);
+            text-decoration: none;
+            font-size: 18px;
+            margin-left: 14px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--chalk-yellow);
+            background-color: rgba(0, 0, 0, 0.2);
+            text-decoration: underline wavy var(--chalk-pink);
+        }
+
+        .main-wrapper {
+            width: 100%;
+            max-width: 820px;
+            padding: 30px 20px;
+            box-sizing: border-box;
+        }
+
+        .chalkboard-hero {
+            background-color: var(--board-bg);
+            border: 8px solid var(--wood-frame);
+            outline: 3px solid var(--wood-border);
+            padding: 28px 30px;
+            border-radius: 14px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), inset 0 0 35px rgba(0, 0, 0, 0.35);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Patrick Hand', cursive;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 35px;
+            color: var(--chalk-yellow);
+            text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.35);
+        }
+
+        .subtitle {
+            color: var(--chalk-muted);
+            font-size: 15px;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .article-card {
+            background-color: var(--board-bg);
+            border: 3px dashed rgba(244, 241, 234, 0.4);
+            padding: 28px;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+            margin-bottom: 28px;
+        }
+
+        .article-card h2 {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 28px;
+            color: var(--chalk-pink);
+            margin-top: 0;
+            margin-bottom: 14px;
+            border-bottom: 2px dashed rgba(249, 168, 212, 0.35);
+            padding-bottom: 8px;
+        }
+
+        .article-card h3 {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 22px;
+            color: var(--chalk-yellow);
+            margin-top: 22px;
+            margin-bottom: 8px;
+        }
+
+        .article-card p, .article-card li {
+            font-size: 14.5px;
+            color: var(--chalk-muted);
+            line-height: 1.75;
+        }
+
+        .article-card ul, .article-card ol {
+            padding-left: 22px;
+        }
+
+        .article-card strong {
+            color: var(--chalk-white);
+        }
+
+        .prompt-box {
+            background-color: var(--board-dark);
+            border: 2px dashed rgba(125, 211, 252, 0.45);
+            border-left: 5px solid var(--chalk-blue);
+            padding: 16px 18px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+
+        .prompt-label {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 19px;
+            color: var(--chalk-blue);
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .cta-box {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px dashed rgba(244, 241, 234, 0.3);
+        }
+
+        .cta-btn {
+            font-family: 'Patrick Hand', cursive;
+            display: inline-block;
+            padding: 12px 26px;
+            background-color: var(--chalk-yellow);
+            color: #1a2e29;
+            text-decoration: none;
+            border: 2px solid #eab308;
+            border-radius: 10px;
+            font-size: 21px;
+            font-weight: bold;
+            box-shadow: 0 4px 0 #a16207;
+            margin: 6px;
+        }
+
+        .cta-btn:hover {
+            background-color: #fef08a;
+        }
+
+        footer {
+            width: 100%;
+            background-color: var(--wood-frame);
+            border-top: 5px solid var(--wood-border);
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--chalk-white);
+            box-sizing: border-box;
+            margin-top: auto;
+        }
+
+        footer a {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 18px;
+            color: var(--chalk-yellow);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline wavy var(--chalk-pink);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="./index.html" class="brand">🖍️ AI Prompt Maker</a>
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./prompt-engineering-guide.html">Study Guide</a>
+                <a href="./coding-prompts-guide.html" class="active">Coding Guide</a>
+                <a href="./about.html">About</a>
+                <a href="./privacy.html">Privacy</a>
+                <a href="./contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <div class="chalkboard-hero">
+            <h1>💻 AI Prompts for Student Coding &amp; Debugging</h1>
+            <p class="subtitle">How IT and Computer Science students can use AI assistants as interactive coding mentors—without skipping core logic and problem-solving skills.</p>
+        </div>
+
+        <article class="article-card">
+            <h2>Why Copy-Pasting AI Code Hurts During Lab Exams</h2>
+            <p>When a Python script throws a <code>TypeError</code> or a Java loop refuses to terminate, it is tempting to paste the entire assignment into an AI chatbot and copy whatever code comes back. However, doing this creates two major problems for students:</p>
+            <ul>
+                <li><strong>Hidden Logic Bugs:</strong> AI models frequently invent non-existent library methods or overlook edge cases like empty user inputs or off-by-one array indices.</li>
+                <li><strong>Zero Retention for Practical Exams:</strong> When your professor asks you to trace variables on paper or debug live without internet access, unexamined AI code leaves you unprepared.</li>
+            </ul>
+            <p>The solution is <strong>Socratic Prompting</strong>—instructing the AI to act like a lab teaching assistant that points out your mistake and explains the underlying concept rather than handing over the finished file.</p>
+        </article>
+
+        <article class="article-card">
+            <h2>4 High-Impact Coding Prompts for Students</h2>
+
+            <h3>1. The "Hint-First" Debugger Prompt</h3>
+            <p>Use this prompt when your code fails to compile or produces the wrong output, and you want to fix the bug yourself:</p>
+            <div class="prompt-box">
+                <span class="prompt-label">📋 Copyable Template:</span>
+                <p style="margin:0; color: var(--chalk-white);">"Act as a computer science lab tutor. I am a second-year IT student working on [Language, e.g., Java / Python]. My code below is supposed to [describe expected output], but instead it produces [describe error or actual output]. Do NOT rewrite my entire code. Identify the specific line causing the logic or syntax error, explain why it happens in simple terms, and give me a hint so I can fix it myself."</p>
+            </div>
+
+            <h3>2. Data Structures &amp; Algorithm Complexity Breakdown</h3>
+            <p>When studying sorting algorithms, linked lists, stacks, or trees, ask the AI to trace the execution step-by-step using a small sample input:</p>
+            <div class="prompt-box">
+                <span class="prompt-label">📋 Copyable Template:</span>
+                <p style="margin:0; color: var(--chalk-white);">"Act as an algorithms professor. Trace how [Algorithm Name, e.g., Binary Search or Merge Sort] processes the sample array [8, 3, 12, 5, 1] pass by pass. Show the state of the array and pointer variables at each step, then summarize its Best, Average, and Worst-case Time Complexity (Big-O) and Space Complexity."</p>
+            </div>
+
+            <h3>3. Object-Oriented Programming (OOP) Refactoring Review</h3>
+            <p>Before submitting a capstone or semester project, use this prompt to check whether your classes follow clean encapsulation and modular design:</p>
+            <div class="prompt-box">
+                <span class="prompt-label">📋 Copyable Template:</span>
+                <p style="margin:0; color: var(--chalk-white);">"Act as a senior software architect reviewing a student OOP project. Analyze my class structure below for tight coupling, repetitive procedural logic, or poor encapsulation. Suggest how I can organize responsibilities cleanly into classes, constructors, and methods while keeping the code readable for a beginner."</p>
+            </div>
+
+            <h3>4. Edge-Case &amp; Unit Test Generator</h3>
+            <p>Professors often grade assignments using hidden test cases. Ask the AI to generate tricky inputs you might have forgotten to test:</p>
+            <div class="prompt-box">
+                <span class="prompt-label">📋 Copyable Template:</span>
+                <p style="margin:0; color: var(--chalk-white);">"Act as a QA software tester. Based on my function specification below, list 8 edge-case test inputs (including boundary values, null/empty strings, negative numbers, and invalid data types) along with the expected output for each test case."</p>
+            </div>
+        </article>
+
+        <article class="article-card">
+            <h2>Best Practices Checklist Before Submitting Student Code</h2>
+            <ol>
+                <li><strong>Read Every Line Aloud:</strong> If you cannot explain what a specific method or regular expression does, ask the AI to break down that single line before keeping it.</li>
+                <li><strong>Test Offline Without AI:</strong> Close your AI tab and re-run your program with five different inputs to verify that your logic holds up independently.</li>
+                <li><strong>Keep Naming Consistent:</strong> Rename generic AI placeholder variables (like <code>tempVar1</code> or <code>foo</code>) into meaningful domain names that match your project's naming convention.</li>
+            </ol>
+
+            <div class="cta-box">
+                <p style="margin-bottom: 14px;">Want to customize a coding or study prompt for your exact subject?</p>
+                <a href="./index.html" class="cta-btn">✏️ Open Prompt Generator</a>
+                <a href="./prompt-engineering-guide.html" class="cta-btn" style="background-color: var(--chalk-green); border-color: #22c55e; box-shadow: 0 4px 0 #15803d;">📚 Read General Study Guide</a>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <p>© 2026 AI Prompt Maker — Built for Students &amp; Creators.</p>
+        <div>
+            <a href="./index.html">Home</a> | 
+            <a href="./prompt-engineering-guide.html">Study Guide</a> | 
+            <a href="./coding-prompts-guide.html">Coding Guide</a> | 
+            <a href="./about.html">About Us</a> | 
+            <a href="./privacy.html">Privacy Policy</a> | 
+            <a href="./contact.html">Contact Us</a>
+        </div>
+    </footer>
+
+</body>
+</html>
